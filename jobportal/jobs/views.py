@@ -49,60 +49,56 @@ def about(request):
 # =========================
 # JOBS + SEARCH + CATEGORY
 # =========================
+
 def jobs(request):
 
-    print("JOB COUNT:", Job.objects.count())
-
     search_query = request.GET.get('search', '').strip()
-# def jobs(request):
-#
-#     search_query = request.GET.get('search', '').strip()
-#
-#     location_query = request.GET.get('location', '').strip()
-#
-#     category_id = request.GET.get('category', '').strip()
-#
-#     all_jobs = Job.objects.all().order_by('-id')
-#
-#     # Search by job title
-#     if search_query:
-#
-#         all_jobs = all_jobs.filter(
-#             job_title__icontains=search_query
-#         )
-#
-#     # Search by location
-#     if location_query:
-#
-#         all_jobs = all_jobs.filter(
-#             location__icontains=location_query
-#         )
-#
-#     # Filter by category
-#     if category_id:
-#
-#         all_jobs = all_jobs.filter(
-#             category_id=category_id
-#         )
-#
-#     # Get all categories for dropdown
-#     all_categories = JobCategory.objects.all().order_by(
-#         'category_name'
-#     )
-#
-#     return render(request, 'jobs.html', {
-#
-#         'jobs': all_jobs,
-#
-#         'search_query': search_query,
-#
-#         'location_query': location_query,
-#
-#         'category_id': category_id,
-#
-#         'categories': all_categories,
-#
-#     })
+
+    location_query = request.GET.get('location', '').strip()
+
+    category_id = request.GET.get('category', '').strip()
+
+    all_jobs = Job.objects.all().order_by('-id')
+
+    # Search by job title
+    if search_query:
+
+        all_jobs = all_jobs.filter(
+            job_title__icontains=search_query
+        )
+
+    # Search by location
+    if location_query:
+
+        all_jobs = all_jobs.filter(
+            location__icontains=location_query
+        )
+
+    # Filter by category
+    if category_id:
+
+        all_jobs = all_jobs.filter(
+            category_id=category_id
+        )
+
+    # Get all categories for dropdown
+    all_categories = JobCategory.objects.all().order_by(
+        'category_name'
+    )
+
+    return render(request, 'jobs.html', {
+
+        'jobs': all_jobs,
+
+        'search_query': search_query,
+
+        'location_query': location_query,
+
+        'category_id': category_id,
+
+        'categories': all_categories,
+
+    })
 
 
 # =========================
@@ -203,7 +199,7 @@ def candidate_register(request):
 
 
 # =========================
-# LOGIN
+# USER LOGIN
 # =========================
 
 def user_login(request):
@@ -238,7 +234,7 @@ def user_login(request):
 
 
 # =========================
-# LOGOUT
+# USER LOGOUT
 # =========================
 
 def user_logout(request):
@@ -478,16 +474,25 @@ def update_application_status(
 
     })
 
+
+# =========================
+# RECRUITER POST JOB
+# =========================
+
 def recruiter_post_job(request):
 
     if not request.user.is_authenticated:
+
         return redirect('user_login')
 
     try:
+
         recruiter = Recruiter.objects.get(
             email=request.user.email
         )
+
     except Recruiter.DoesNotExist:
+
         return redirect('recruiter_portal')
 
     if request.method == 'POST':
@@ -506,21 +511,31 @@ def recruiter_post_job(request):
             return redirect('recruiter_portal')
 
     else:
+
         form = JobForm()
 
         # Recruiter can only post for their company
         form.fields['company'].initial = recruiter.company
 
     return render(request, 'recruiter_post_job.html', {
+
         'form': form,
+
         'recruiter': recruiter
+
     })
+
+
+# =========================
+# RECRUITER LOGIN
+# =========================
 
 def recruiter_login(request):
 
     if request.method == 'POST':
 
         username = request.POST.get('username')
+
         password = request.POST.get('password')
 
         user = authenticate(
@@ -532,7 +547,10 @@ def recruiter_login(request):
         if user is not None:
 
             try:
-                Recruiter.objects.get(email=user.email)
+
+                Recruiter.objects.get(
+                    email=user.email
+                )
 
                 login(request, user)
 
@@ -540,14 +558,27 @@ def recruiter_login(request):
 
             except Recruiter.DoesNotExist:
 
-                return render(request, 'recruiter_login.html', {
-                    'error': 'This account is not registered as a recruiter.'
-                })
+                return render(
+                    request,
+                    'recruiter_login.html',
+                    {
+                        'error':
+                        'This account is not registered as a recruiter.'
+                    }
+                )
 
         else:
 
-            return render(request, 'recruiter_login.html', {
-                'error': 'Invalid username or password.'
-            })
+            return render(
+                request,
+                'recruiter_login.html',
+                {
+                    'error':
+                    'Invalid username or password.'
+                }
+            )
 
-    return render(request, 'recruiter_login.html')
+    return render(
+        request,
+        'recruiter_login.html'
+    )
