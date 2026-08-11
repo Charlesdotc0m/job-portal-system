@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us - HireHub{% endblock %}
+
+{% block content %}
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="job-badge">
+                GET IN TOUCH
+            </span>
+
+            <h1 class="section-title mt-3">
+                Contact Us
+            </h1>
+
+            <p class="section-subtitle">
+                Have questions? We'd love to hear from you.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- Contact Details -->
+
+            <div class="col-lg-5">
+
+                <div class="dashboard-card h-100">
+
+                    <h3 class="fw-bold mb-4">
+                        Let's Talk
+                    </h3>
+
+                    <p class="text-muted">
+                        Whether you're looking for a job or
+                        searching for the right candidate,
+                        our team is here to help.
+                    </p>
+
+
+                    <div class="d-flex align-items-center mt-4">
+
+                        <div class="category-icon me-3">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+
+                        <div>
+                            <h6 class="mb-1">
+                                Email
+                            </h6>
+
+                            <p class="text-muted mb-0">
+                                support@hirehub.com
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="d-flex align-items-center mt-4">
+
+                        <div class="category-icon me-3">
+                            <i class="bi bi-telephone"></i>
+                        </div>
+
+                        <div>
+                            <h6 class="mb-1">
+                                Phone
+                            </h6>
+
+                            <p class="text-muted mb-0">
+                                +91 98765 43210
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="d-flex align-items-center mt-4">
+
+                        <div class="category-icon me-3">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+
+                        <div>
+                            <h6 class="mb-1">
+                                Location
+                            </h6>
+
+                            <p class="text-muted mb-0">
+                                Chennai, Tamil Nadu
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Contact Form -->
+
+            <div class="col-lg-7">
+
+                <div class="dashboard-card">
+
+                    <h3 class="fw-bold mb-4">
+                        Send Us a Message
+                    </h3>
+
+                    <form method="POST">
+
+                        {% csrf_token %}
+
+                        {% if success %}
+                        <div class="alert alert-success">
+                            {{ success }}
+                        </div>
+                        {% endif %}
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Your Name
+                            </label>
+
+                            <input type="text"
+                                   name="name"
+                                   class="form-control"
+                                   placeholder="Enter your name"
+                                   required>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Email Address
+                            </label>
+
+                            <input type="email"
+                                   name="email"
+                                   class="form-control"
+                                   placeholder="Enter your email"
+                                   required>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Subject
+                            </label>
+
+                            <input type="text"
+                                   name="subject"
+                                   class="form-control"
+                                   placeholder="Enter subject"
+                                   required>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Message
+                            </label>
+
+                            <textarea name="message"
+                                      class="form-control"
+                                      rows="5"
+                                      placeholder="Write your message..."
+                                      required></textarea>
+
+                        </div>
+
+
+                        <button type="submit"
+                                class="btn btn-purple">
+
+                            <i class="bi bi-send me-2"></i>
+                            Send Message
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

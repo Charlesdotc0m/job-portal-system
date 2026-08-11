@@ -1,0 +1,958 @@
+/* =========================================
+   HIREHUB - GLOBAL STYLE
+========================================= */
+
+:root {
+    --primary: #4B1FB8;
+    --primary-dark: #35128F;
+    --primary-light: #EEE8FF;
+
+    --background: #F7F7FB;
+    --white: #FFFFFF;
+
+    --text-dark: #25213A;
+    --text-light: #77738A;
+
+    --border: #E8E5F0;
+
+    --shadow: 0 10px 30px rgba(55, 25, 120, 0.08);
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--background);
+    color: var(--text-dark);
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.hirehub-navbar {
+    background: var(--white);
+    padding: 18px 0;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
+}
+
+
+.hirehub-logo {
+    font-size: 24px;
+    font-weight: 800;
+
+    color: var(--primary) !important;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    text-decoration: none;
+}
+
+
+.logo-icon {
+    width: 38px;
+    height: 38px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary);
+    color: white;
+
+    border-radius: 11px;
+}
+
+
+.navbar-nav {
+    gap: 8px;
+}
+
+
+.nav-link {
+    color: #5F5B70 !important;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    padding: 10px 16px !important;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary) !important;
+    background: var(--primary-light);
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn-purple {
+    background: var(--primary);
+    color: white !important;
+
+    border-radius: 10px;
+
+    padding: 11px 22px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    border: none;
+
+    transition: 0.3s;
+}
+
+
+.btn-purple:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+}
+
+
+.btn-login {
+    color: var(--primary) !important;
+
+    background: var(--primary-light);
+
+    border-radius: 10px;
+
+    padding: 11px 20px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero-section {
+    padding: 80px 0;
+
+    background: linear-gradient(
+        135deg,
+        #F8F6FF 0%,
+        #EEE9FF 100%
+    );
+}
+
+
+.hero-title {
+    font-size: 52px;
+
+    font-weight: 800;
+
+    line-height: 1.15;
+
+    color: var(--text-dark);
+}
+
+
+.hero-title span {
+    color: var(--primary);
+}
+
+
+.hero-description {
+    color: var(--text-light);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    max-width: 550px;
+}
+
+
+/* =========================================
+   SEARCH BOX
+========================================= */
+
+.job-search-box {
+    background: white;
+
+    padding: 15px;
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow);
+
+    margin-top: 35px;
+}
+
+
+.search-input {
+    border: none !important;
+
+    box-shadow: none !important;
+
+    font-size: 14px;
+}
+
+
+.search-input:focus {
+    outline: none;
+}
+
+
+/* =========================================
+   SECTION
+========================================= */
+
+.section {
+    padding: 75px 0;
+}
+
+
+.section-title {
+    font-size: 30px;
+
+    font-weight: 800;
+
+    color: var(--text-dark);
+}
+
+
+.section-subtitle {
+    color: var(--text-light);
+
+    margin-top: 8px;
+}
+
+
+/* =========================================
+   HOME PAGE SECTION SPACING
+========================================= */
+
+.categories-section {
+    padding-top: 35px !important;
+    padding-bottom: 25px !important;
+
+    margin-bottom: 0 !important;
+}
+
+
+/*
+   Featured Jobs container immediately
+   after Categories section
+*/
+
+.categories-section + .container {
+    padding-top: 20px !important;
+    margin-top: 0 !important;
+}
+
+
+/*
+   If Featured Jobs has this class
+*/
+
+.featured-section {
+    padding-top: 20px !important;
+    padding-bottom: 40px !important;
+
+    margin-top: 0 !important;
+}
+
+
+/*
+   Latest Jobs spacing
+*/
+
+.latest-section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+
+    margin-top: 0 !important;
+}
+
+
+/*
+   Work With The Best / Companies
+*/
+
+.companies-section {
+    padding-top: 40px !important;
+    padding-bottom: 50px !important;
+
+    margin-top: 0 !important;
+}
+
+
+/* =========================================
+   JOB CARD
+========================================= */
+
+.job-card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 24px;
+
+    height: 100%;
+
+    transition: 0.3s;
+}
+
+
+.job-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: var(--shadow);
+
+    border-color: #D8CCFF;
+}
+
+
+.company-logo {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 14px;
+
+    object-fit: cover;
+
+    background: var(--primary-light);
+
+    padding: 8px;
+}
+
+
+.job-title {
+    font-size: 17px;
+
+    font-weight: 700;
+
+    margin-top: 18px;
+}
+
+
+.company-name {
+    font-size: 13px;
+
+    color: var(--text-light);
+}
+
+
+.job-info {
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    margin-top: 15px;
+}
+
+
+.job-info i {
+    color: var(--primary);
+
+    margin-right: 5px;
+}
+
+
+/* =========================================
+   BADGES
+========================================= */
+
+.job-badge {
+    display: inline-block;
+
+    padding: 7px 13px;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    border-radius: 50px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   COMPANY CARD
+========================================= */
+
+.company-card {
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    border: 1px solid var(--border);
+
+    transition: 0.3s;
+}
+
+
+.company-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow);
+}
+
+
+.company-card img {
+    width: 70px;
+    height: 70px;
+
+    object-fit: contain;
+
+    border-radius: 15px;
+
+    padding: 10px;
+
+    background: var(--primary-light);
+}
+
+
+.company-card h5 {
+    margin-top: 15px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   CATEGORY CARD
+========================================= */
+
+.category-card {
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    min-height: 170px;
+
+    border: 1px solid var(--border);
+
+    transition: 0.3s;
+}
+
+
+.category-card:hover {
+    background: var(--primary);
+
+    color: white;
+
+    transform: translateY(-5px);
+}
+
+
+.category-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    border-radius: 14px;
+
+    font-size: 20px;
+
+    margin-bottom: 15px;
+}
+
+
+.category-card:hover .category-icon {
+    background: white;
+}
+
+
+/* =========================================
+   CATEGORY DROPDOWN
+========================================= */
+
+select.search-input {
+    height: 48px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background-color: #ffffff;
+
+    color: #333333;
+
+    padding: 0 40px 0 15px;
+
+    font-size: 15px;
+
+    box-shadow: none;
+
+    cursor: pointer;
+}
+
+
+select.search-input:focus {
+    border: none;
+
+    outline: none;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(75, 31, 184, 0.15);
+}
+
+
+select.search-input option {
+    color: #333333;
+
+    background-color: #ffffff;
+}
+
+
+.job-search-box .form-select {
+    height: 48px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 0 40px 0 15px;
+
+    font-size: 14px;
+
+    color: #333;
+
+    background-color: #fff;
+
+    cursor: pointer;
+}
+
+
+.job-search-box .form-select:focus {
+    border: none;
+
+    outline: none;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(75, 31, 184, 0.15);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.hirehub-footer {
+    background: #24105F;
+
+    color: #D7D1E8;
+
+    padding: 60px 0 25px;
+}
+
+
+.footer-logo {
+    color: white !important;
+
+    margin-bottom: 20px;
+}
+
+
+.hirehub-footer h5 {
+    color: white;
+
+    font-size: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+.hirehub-footer a {
+    display: block;
+
+    color: #C5BDD9;
+
+    text-decoration: none;
+
+    margin-bottom: 12px;
+
+    font-size: 13px;
+}
+
+
+.hirehub-footer a:hover {
+    color: white;
+}
+
+
+.hirehub-footer p {
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+.hirehub-footer hr {
+    border-color: rgba(255,255,255,0.1);
+}
+
+
+/* =========================================
+   FORMS
+========================================= */
+
+.form-control,
+.form-select {
+    border: 1px solid var(--border);
+
+    border-radius: 11px;
+
+    padding: 12px 15px;
+
+    font-size: 14px;
+}
+
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(75, 31, 184, 0.1);
+}
+
+
+/* =========================================
+   CANDIDATE FORM
+========================================= */
+
+.candidate-form-card {
+    padding: 40px;
+
+    border-radius: 20px;
+}
+
+
+.candidate-form-card .form-label {
+    font-weight: 600;
+
+    color: #29204f;
+
+    margin-bottom: 8px;
+}
+
+
+.candidate-form-card .form-control {
+    border: 1px solid #ddd5f5;
+
+    border-radius: 10px;
+
+    padding: 12px 14px;
+}
+
+
+.candidate-form-card .form-control:focus {
+    border-color: #4B1FB8;
+
+    box-shadow:
+        0 0 0 0.2rem
+        rgba(75, 31, 184, 0.12);
+}
+
+
+.candidate-form-card input[type="file"] {
+    padding: 10px;
+}
+
+
+.candidate-form-card textarea {
+    resize: vertical;
+}
+
+
+/* =========================================
+   DASHBOARD SIDEBAR
+========================================= */
+
+.dashboard-sidebar {
+    min-height: 100vh;
+
+    background: linear-gradient(
+        180deg,
+        #4B1FB8,
+        #35128F
+    );
+
+    color: white;
+
+    padding: 25px 18px;
+}
+
+
+.sidebar-logo {
+    color: white;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    margin-bottom: 45px;
+}
+
+
+.sidebar-menu {
+    list-style: none;
+
+    padding: 0;
+}
+
+
+.sidebar-menu li {
+    margin-bottom: 8px;
+}
+
+
+.sidebar-menu a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 15px;
+
+    border-radius: 11px;
+
+    color: rgba(255,255,255,0.75);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+
+.sidebar-menu a:hover,
+.sidebar-menu a.active {
+    background: rgba(255,255,255,0.15);
+
+    color: white;
+}
+
+
+.sidebar-menu i {
+    font-size: 17px;
+}
+
+
+/* =========================================
+   DASHBOARD CONTENT
+========================================= */
+
+.dashboard-content {
+    padding: 30px;
+
+    background: var(--background);
+
+    min-height: 100vh;
+}
+
+
+.dashboard-card {
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,0.03);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        padding: 50px 0;
+    }
+
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+
+    .section {
+        padding: 50px 0;
+    }
+
+
+    .dashboard-sidebar {
+        min-height: auto;
+    }
+
+
+    .dashboard-content {
+        padding: 20px;
+    }
+
+
+    .candidate-form-card {
+        padding: 30px 20px;
+
+        border-radius: 20px;
+    }
+
+
+    /* Mobile category spacing */
+
+    .categories-section {
+        padding-top: 25px !important;
+
+        padding-bottom: 20px !important;
+    }
+
+
+    .categories-section .text-center {
+        margin-bottom: 30px !important;
+    }
+
+
+    .featured-section {
+        padding-top: 20px !important;
+    }
+
+
+    .latest-section {
+        padding-top: 30px !important;
+    }
+
+
+    .companies-section {
+        padding-top: 30px !important;
+    }
+
+
+    .category-card {
+        min-height: 150px;
+
+        padding: 20px;
+    }
+
+
+    .job-card {
+        padding: 20px;
+    }
+
+
+    .job-search-box {
+        padding: 12px;
+    }
+
+
+    .job-search-box .form-select {
+        width: 100%;
+    }
+
+}
+
+/* =========================================
+   HOME PAGE
+   CATEGORIES → FEATURED SPACING
+========================================= */
+
+.categories-home-section {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+
+
+.featured-home-section {
+    padding-top: 0 !important;
+    margin-top: -10px !important;
+    padding-bottom: 75px !important;
+}
+
+.categories-home-section .categories-section {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* =========================================
+   RECRUITER - POST JOB FORM
+========================================= */
+
+.recruiter-job-form-card {
+    padding: 40px;
+    border-radius: 20px;
+}
+
+
+.recruiter-job-form-card .form-label {
+    font-weight: 600;
+    color: #29204f;
+    margin-bottom: 8px;
+}
+
+
+.recruiter-job-form-card .form-control,
+.recruiter-job-form-card .form-select {
+    width: 100%;
+}
+
+
+@media (max-width: 768px) {
+
+    .recruiter-job-form-card {
+        padding: 25px 20px;
+    }
+
+}

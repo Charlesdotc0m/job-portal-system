@@ -1,0 +1,239 @@
+{% extends 'base.html' %}
+
+{% block title %}Candidate Portal - HireHub{% endblock %}
+
+{% block content %}
+
+<section class="section">
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <div class="text-center mb-5">
+
+            <span class="job-badge">
+                CANDIDATE PORTAL
+            </span>
+
+            <h1 class="section-title mt-3">
+                Welcome, {{ request.user.username }}
+            </h1>
+
+            <p class="section-subtitle">
+                Manage your profile and explore career opportunities.
+            </p>
+
+        </div>
+
+
+        {% if candidate %}
+
+        <!-- Profile -->
+
+        <div class="row g-4 mb-5">
+
+            <div class="col-lg-4">
+
+                <div class="dashboard-card h-100 text-center">
+
+                    <div class="category-icon mx-auto mb-3">
+
+                        <i class="bi bi-person-fill"></i>
+
+                    </div>
+
+                    <h4 class="fw-bold">
+                        {{ candidate.candidate_name }}
+                    </h4>
+
+                    <p class="text-muted">
+                        {{ candidate.email }}
+                    </p>
+
+                    <p class="text-muted">
+                        <i class="bi bi-telephone me-2"></i>
+                        {{ candidate.phone }}
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-8">
+
+                <div class="dashboard-card h-100">
+
+                    <h4 class="fw-bold mb-4">
+                        My Profile
+                    </h4>
+
+                    <div class="mb-3">
+
+                        <h6 class="fw-bold">
+                            Skills
+                        </h6>
+
+                        <p class="text-muted">
+                            {{ candidate.skills }}
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <h6 class="fw-bold">
+                            Resume
+                        </h6>
+
+                        {% if candidate.resume %}
+
+                        <a href="{{ candidate.resume.url }}"
+                           target="_blank"
+                           class="btn btn-purple">
+
+                            <i class="bi bi-file-earmark-pdf me-2"></i>
+                            View Resume
+
+                        </a>
+
+                        {% else %}
+
+                        <p class="text-muted">
+                            No resume uploaded.
+                        </p>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Quick Actions -->
+
+        <div class="text-center mb-4">
+
+            <h2 class="section-title">
+                Quick Actions
+            </h2>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="category-card h-100">
+
+                    <div class="category-icon">
+
+                        <i class="bi bi-search"></i>
+
+                    </div>
+
+                    <h5>
+                        Browse Jobs
+                    </h5>
+
+                    <p class="text-muted">
+                        Find jobs that match your skills and interests.
+                    </p>
+
+                    <a href="{% url 'jobs' %}"
+                       class="btn btn-purple">
+
+                        Explore Jobs
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="category-card h-100">
+
+                    <div class="category-icon">
+
+                        <i class="bi bi-file-earmark-text"></i>
+
+                    </div>
+
+                    <h5>
+                        My Applications
+                    </h5>
+
+                    <p class="text-muted">
+                        Track the jobs you have applied for.
+                    </p>
+
+                    <a href="{% url 'my_applications' %}"
+                       class="btn btn-purple">
+
+                        View Applications
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="category-card h-100">
+
+                    <div class="category-icon">
+
+                        <i class="bi bi-box-arrow-right"></i>
+
+                    </div>
+
+                    <h5>
+                        Logout
+                    </h5>
+
+                    <p class="text-muted">
+                        Securely logout from your HireHub account.
+                    </p>
+
+                    <a href="{% url 'user_logout' %}"
+                       class="btn btn-purple">
+
+                        Logout
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% else %}
+
+        <div class="text-center">
+
+            <div class="alert alert-warning">
+                Candidate profile not found.
+            </div>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}
