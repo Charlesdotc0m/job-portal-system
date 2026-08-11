@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-q**@8unqq=oszht01qe$eyu@rj(l5-c@4j4pl40tq*#%ptz*i&
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
+CSRF_TRUSTED_ORIGINS = [
+    "https://job-portal-system-owmi.onrender.com",
+]
 
 # Application definition
 
