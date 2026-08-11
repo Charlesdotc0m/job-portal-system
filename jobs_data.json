@@ -1,0 +1,210 @@
+[
+{
+  "model": "jobs.jobcategory",
+  "pk": 1,
+  "fields": {
+    "category_name": "Software developement",
+    "category_description": "Software development involves designing, developing, testing and maintaining web and software applications using modern programming technologies."
+  }
+},
+{
+  "model": "jobs.jobcategory",
+  "pk": 2,
+  "fields": {
+    "category_name": "Data Science",
+    "category_description": "Analyze data and create insights"
+  }
+},
+{
+  "model": "jobs.jobcategory",
+  "pk": 3,
+  "fields": {
+    "category_name": "Digital Marketing",
+    "category_description": "Grow brands and businesses"
+  }
+},
+{
+  "model": "jobs.jobcategory",
+  "pk": 4,
+  "fields": {
+    "category_name": "Human Resources",
+    "category_description": "Manage people and talent"
+  }
+},
+{
+  "model": "jobs.jobcategory",
+  "pk": 5,
+  "fields": {
+    "category_name": "UI/UX Design",
+    "category_description": "Create beautiful user experiences"
+  }
+},
+{
+  "model": "jobs.jobcategory",
+  "pk": 6,
+  "fields": {
+    "category_name": "Cyber Security",
+    "category_description": "Protect systems, networks and data from cyber threats."
+  }
+},
+{
+  "model": "jobs.jobcategory",
+  "pk": 7,
+  "fields": {
+    "category_name": "Cloud Computing",
+    "category_description": "Build and manage scalable cloud-based applications and services."
+  }
+},
+{
+  "model": "jobs.jobcategory",
+  "pk": 8,
+  "fields": {
+    "category_name": "Mobile App Development",
+    "category_description": "Create innovative applications for Android and iOS platforms."
+  }
+},
+{
+  "model": "jobs.company",
+  "pk": 1,
+  "fields": {
+    "company_name": "TechNova Solutions",
+    "company_logo": "company_logos/logo.jpg",
+    "company_location": "chennai",
+    "company_description": "TechNova Solutions is a technology company focused on developing innovative software solutions and digital products for businesses."
+  }
+},
+{
+  "model": "jobs.company",
+  "pk": 2,
+  "fields": {
+    "company_name": "infosys",
+    "company_logo": "company_logos/infosys.webp",
+    "company_location": "chennai,tamilnadu",
+    "company_description": "seeking for a hardworking to  work for our mnc"
+  }
+},
+{
+  "model": "jobs.company",
+  "pk": 3,
+  "fields": {
+    "company_name": "tata consultancy service",
+    "company_logo": "company_logos/tcs.webp",
+    "company_location": "chennai,tamilnadu",
+    "company_description": "TCS is a leading IT services and consulting company providing technology solutions, software development, cloud services, data analytics, and digital transformation services to businesses worldwide."
+  }
+},
+{
+  "model": "jobs.company",
+  "pk": 4,
+  "fields": {
+    "company_name": "Zoho",
+    "company_logo": "company_logos/zoho.webp",
+    "company_location": "chennai,tamilnadu",
+    "company_description": "Zoho is a software company that develops a wide range of cloud-based business applications for organizations. Its products help businesses manage sales, marketing, finance, customer relationships, and operations."
+  }
+},
+{
+  "model": "jobs.company",
+  "pk": 5,
+  "fields": {
+    "company_name": "InnovateX Technologies",
+    "company_logo": "company_logos/innova.webp",
+    "company_location": "hyderabad",
+    "company_description": "InnovateX Technologies"
+  }
+},
+{
+  "model": "jobs.company",
+  "pk": 6,
+  "fields": {
+    "company_name": "BrightWave Digital",
+    "company_logo": "company_logos/bright.webp",
+    "company_location": "maharastra",
+    "company_description": "BrightWave Digital is a digital solutions company specializing in digital marketing, branding, user experience, and online business growth. The company works with businesses to create effective digital strategies and engaging customer experiences."
+  }
+},
+{
+  "model": "jobs.job",
+  "pk": 1,
+  "fields": {
+    "job_title": "Junior Python Developer",
+    "job_description": "We are looking for a motivated Junior Python Developer to join our development team. The candidate will be responsible for developing and maintaining web applications using Python and Django. The role involves working with databases, REST APIs, frontend technologies and collaborating with other developers to build reliable software solutions.",
+    "salary": "45000.00",
+    "location": "Chennai, Tamil Nadu",
+    "company": 1,
+    "category": 1
+  }
+},
+{
+  "model": "jobs.job",
+  "pk": 2,
+  "fields": {
+    "job_title": "Django Developer",
+    "job_description": "Develop and maintain web applications using Python and Django. Work with databases, APIs, authentication systems, and collaborate with frontend developers to build scalable web solutions.",
+    "salary": "23000.00",
+    "location": "Chennai, Tamil Nadu",
+    "company": 2,
+    "category": 1
+  }
+},
+{
+  "model": "jobs.job",
+  "pk": 3,
+  "fields": {
+    "job_title": "React developer",
+    "job_description": "Build responsive and interactive web applications using React.js. Work with reusable components, APIs, JavaScript, and modern frontend development practices.",
+    "salary": "30000.00",
+    "location": "hyderabad",
+    "company": 2,
+    "category": 8
+  }
+},
+{
+  "model": "jobs.job",
+  "pk": 4,
+  "fields": {
+    "job_title": "Software Engineer",
+    "job_description": "Design, develop, test, and maintain software applications. Collaborate with development teams to build reliable and scalable software solutions using modern programming technologies.",
+    "salary": "28000.00",
+    "location": "maharastra",
+    "company": 4,
+    "category": 1
+  }
+},
+{
+  "model": "jobs.job",
+  "pk": 5,
+  "fields": {
+    "job_title": "Data Analyst",
+    "job_description": "Analyze business data, identify trends, prepare reports, and provide meaningful insights to support business decisions. Knowledge of SQL, Excel, Python, and data visualization tools is preferred.",
+    "salary": "27000.00",
+    "location": "Chennai, Tamil Nadu",
+    "company": 6,
+    "category": 2
+  }
+},
+{
+  "model": "jobs.job",
+  "pk": 6,
+  "fields": {
+    "job_title": "UI/UX Designer",
+    "job_description": "Design intuitive and visually appealing user interfaces for web and mobile applications. Create wireframes, prototypes, user flows, and collaborate with developers to deliver excellent user experiences.",
+    "salary": "33000.00",
+    "location": "hyderabad",
+    "company": 4,
+    "category": 5
+  }
+},
+{
+  "model": "jobs.job",
+  "pk": 7,
+  "fields": {
+    "job_title": "Marketing Manager",
+    "job_description": "Develop and execute marketing strategies to increase brand awareness and business growth. Manage digital campaigns, analyze marketing performance, and coordinate with creative and sales teams.",
+    "salary": "42000.00",
+    "location": "maharastra",
+    "company": 6,
+    "category": 3
+  }
+}
+]
