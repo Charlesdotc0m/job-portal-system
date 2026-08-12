@@ -53,54 +53,41 @@ def about(request):
 def jobs(request):
 
     search_query = request.GET.get('search', '').strip()
-
     location_query = request.GET.get('location', '').strip()
-
     category_id = request.GET.get('category', '').strip()
 
     all_jobs = Job.objects.all().order_by('-id')
 
-    # Search by job title
     if search_query:
-
         all_jobs = all_jobs.filter(
             job_title__icontains=search_query
         )
 
-    # Search by location
     if location_query:
-
         all_jobs = all_jobs.filter(
             location__icontains=location_query
         )
 
-    # Filter by category
     if category_id:
-
         all_jobs = all_jobs.filter(
             category_id=category_id
         )
 
-    # Get all categories for dropdown
     all_categories = JobCategory.objects.all().order_by(
         'category_name'
     )
 
+    print("JOB COUNT:", Job.objects.count())
+    print("CATEGORY COUNT:", JobCategory.objects.count())
+    print("COMPANY COUNT:", Company.objects.count())
+
     return render(request, 'jobs.html', {
-
         'jobs': all_jobs,
-
         'search_query': search_query,
-
         'location_query': location_query,
-
         'category_id': category_id,
-
         'categories': all_categories,
-
     })
-
-
 # =========================
 # COMPANIES
 # =========================
